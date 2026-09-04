@@ -1,0 +1,13 @@
+{
+  "name": "VitalCare 2.0 — Minha Fila",
+  "short_name": "Minha Fila",
+  "description": "Acompanhamento da jornada de atendimento do paciente.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#eaf5ff",
+  "theme_color": "#0b63f6",
+  "icons": [
+    { "src": "assets/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

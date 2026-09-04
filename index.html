@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b63f6" />
+  <meta name="description" content="VitalCare Minha Fila — acompanhamento do atendimento do paciente." />
+  <title>VitalCare Minha Fila</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <div class="app-shell">
+    <header class="mobile-header">
+      <div class="header-top">
+        <img class="main-logo" src="assets/logo-vitalcare-2.0.png" alt="VitalCare 2.0 Minha Fila" />
+        <button class="avatar-button" type="button" aria-label="Perfil de Catarine">C</button>
+      </div>
+      <div class="header-copy">
+        <span class="header-kicker"><i></i> Atendimento em andamento</span>
+        <h1><span id="greeting">Olá</span>, <span id="patientName">Catarine</span>.</h1>
+        <p>Acompanhe seu atendimento em tempo real.</p>
+      </div>
+    </header>
+
+    <main id="conteudo">
+      <section class="status-card" aria-label="Resumo do atendimento">
+        <div class="status-row">
+          <span>Etapa atual</span>
+          <span class="status-pill" id="statusBadge">Em espera</span>
+        </div>
+        <h2 id="currentStage">Aguardando avaliação médica</h2>
+        <p id="stageMessage">Seu pré-atendimento foi concluído e seus dados já estão disponíveis para a equipe.</p>
+        <div class="progress-track"><span id="progressBar"></span></div>
+        <div class="progress-meta"><span>Entrada</span><strong id="progressText">60%</strong><span>Conclusão</span></div>
+        <div class="status-actions">
+          <button class="btn btn-primary" id="listenStatus" type="button">🔊 Ouvir status</button>
+          <button class="btn btn-light" id="refreshStatus" type="button">↻ Atualizar</button>
+        </div>
+        <small class="last-update">Última atualização: <strong id="lastUpdated">agora</strong></small>
+      </section>
+
+      <section class="summary-grid" aria-label="Resumo rápido">
+        <article class="summary-card primary">
+          <span class="summary-label">Estimativa de espera</span>
+          <strong id="waitTime">22 min</strong>
+          <small>pode variar conforme prioridades clínicas</small>
+        </article>
+        <article class="summary-card">
+          <span class="summary-label">Posição na fila</span>
+          <strong id="queuePosition">4º</strong>
+          <small id="aheadText">3 pessoas à sua frente</small>
+        </article>
+        <article class="summary-card">
+          <span class="summary-label">Prioridade preliminar</span>
+          <strong id="priorityText">Amarela</strong>
+          <small>registrada no pré-atendimento</small>
+        </article>
+        <article class="summary-card">
+          <span class="summary-label">Pré-atendimento</span>
+          <strong>Concluído</strong>
+          <small id="precheckTime">às 08:47</small>
+        </article>
+      </section>
+
+      <section class="section-block" id="jornada">
+        <div class="section-title-row">
+          <div>
+            <span class="section-kicker">Sua jornada</span>
+            <h2>Acompanhe o atendimento</h2>
+          </div>
+          <span class="auto-chip">Automático</span>
+        </div>
+        <ol class="journey-list" id="journeyList"></ol>
+      </section>
+
+      <section class="notice-card">
+        <div class="notice-icon">i</div>
+        <div>
+          <strong>Enquanto você espera</strong>
+          <p>Permaneça próximo à área de espera e acompanhe as atualizações por aqui.</p>
+        </div>
+        <button id="listenGuidance" type="button">🔊 Ouvir</button>
+      </section>
+
+      <section class="section-block" id="dados">
+        <div class="section-title-row align-end">
+          <div>
+            <span class="section-kicker">Pré-atendimento</span>
+            <h2>Seus sinais vitais</h2>
+          </div>
+          <span class="time-chip" id="vitalsTime">08:46</span>
+        </div>
+        <div class="vitals-grid" id="vitalsGrid"></div>
+      </section>
+
+      <section class="section-block">
+        <span class="section-kicker">Anamnese</span>
+        <h2>Resumo informado</h2>
+        <dl class="detail-list" id="anamnesisList"></dl>
+      </section>
+
+      <section class="section-block">
+        <span class="section-kicker">Atendimento</span>
+        <h2>Informações úteis</h2>
+        <dl class="detail-list" id="attendanceInfo"></dl>
+      </section>
+
+      <section class="section-block" id="atualizacoes">
+        <span class="section-kicker">Histórico</span>
+        <h2>Atualizações recentes</h2>
+        <div class="updates-list" id="updatesList"></div>
+      </section>
+
+      <section class="accessibility-card" id="ajuda">
+        <div class="accessibility-copy">
+          <span class="section-kicker">Acessibilidade</span>
+          <h2>Personalize sua experiência</h2>
+          <p>Você pode aumentar o texto, reduzir animações ou ouvir um resumo.</p>
+        </div>
+        <div class="accessibility-grid">
+          <button id="fontToggle" type="button">A+ Texto</button>
+          <button id="motionToggle" type="button">◌ Animações</button>
+          <button id="readPage" type="button">🔊 Ouvir resumo</button>
+          <button id="contrastToggle" type="button" aria-pressed="false">◐ Contraste</button>
+        </div>
+      </section>
+
+      <section class="help-card">
+        <strong>Se seus sintomas piorarem</strong>
+        <p>Procure imediatamente a equipe da unidade. Este portal acompanha o atendimento, mas não substitui a avaliação presencial.</p>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <img src="assets/logo-vitalcare-2.0.png" alt="VitalCare 2.0 Minha Fila" />
+      <span>Informação que acompanha o cuidado.</span>
+    </footer>
+  </div>
+
+  <nav class="bottom-nav" aria-label="Navegação principal">
+    <a href="#conteudo" class="active"><span>⌂</span><small>Início</small></a>
+    <a href="#jornada"><span>↗</span><small>Jornada</small></a>
+    <a href="#dados"><span>♥</span><small>Dados</small></a>
+    <a href="#ajuda"><span>☰</span><small>Mais</small></a>
+  </nav>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
