@@ -1,0 +1,20 @@
+VITALCARE MINHA FILA 5.1 — CHECKLIST RÁPIDO
+
+[ ] Abrir INICIAR_MINHA_FILA_5_1.bat
+[ ] Entrar com CPF + data de nascimento
+[ ] Nome, unidade e prontuário aparecem
+[ ] Etapa atual aparece corretamente
+[ ] Espera e posição aparecem quando aplicável
+[ ] Prioridade aparece
+[ ] Jornada aparece
+[ ] Sinais vitais aparecem
+[ ] Anamnese aparece
+[ ] Prontuário clínico abre suas categorias
+[ ] Informações úteis preservam a visão completa
+[ ] Histórico mostra atualizações
+[ ] Solicitar reavaliação abre e envia
+[ ] Modo de privacidade oculta dados
+[ ] Atualizar agora funciona
+[ ] Barra superior mostra Conectado ao vivo ou Conectado
+[ ] Horário exibido corresponde a Brasília
+[ ] Site se adapta ao celular

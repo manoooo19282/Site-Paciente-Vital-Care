@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b63f6" />
+  <meta name="robots" content="noindex,nofollow" />
+  <meta name="description" content="Acesso seguro ao VitalCare Minha Fila." />
+  <title>VitalCare Minha Fila — Acesso</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="login.css?v=5.1.0" />
+</head>
+<body>
+  <div class="ambient a1"></div><div class="ambient a2"></div>
+  <main class="login-shell">
+    <section class="login-hero" aria-label="VitalCare Minha Fila">
+      <div class="brand"><img src="assets/logo-vitalcare-2.0.png" alt="VitalCare 2.0 Minha Fila" /></div>
+      <span class="live-pill"><i></i> Portal do paciente</span>
+      <h1>Acompanhe seu atendimento com clareza.</h1>
+      <p>Fila, jornada, sinais vitais e atualizações da equipe reunidos em um único lugar.</p>
+      <div class="feature-row">
+        <div><strong>Tempo real</strong><span>Atualizações automáticas</span></div>
+        <div><strong>Brasília</strong><span>Horários padronizados</span></div>
+        <div><strong>Privado</strong><span>Sessão vinculada ao atendimento</span></div>
+      </div>
+    </section>
+
+    <section class="login-card" aria-labelledby="loginTitle">
+      <div class="card-head">
+        <span class="kicker">Acesso do paciente</span>
+        <span class="secure-badge">⌁ Sessão protegida</span>
+      </div>
+      <h2 id="loginTitle">Entre no Minha Fila</h2>
+      <p class="intro">Use os mesmos dados informados no pré-atendimento. Você não precisa de código de acesso.</p>
+      <form id="loginForm" novalidate>
+        <div class="field">
+          <label for="cpf">CPF</label>
+          <div class="input-wrap"><span aria-hidden="true">▣</span><input id="cpf" name="cpf" inputmode="numeric" autocomplete="username" maxlength="14" placeholder="000.000.000-00" required /></div>
+        </div>
+        <div class="field">
+          <label for="birthDate">Data de nascimento</label>
+          <div class="input-wrap"><span aria-hidden="true">◷</span><input id="birthDate" name="birthDate" type="date" autocomplete="bday" required /></div>
+        </div>
+        <button class="login-button" id="loginButton" type="submit"><span>Acessar Minha Fila</span><b aria-hidden="true">→</b></button>
+        <div class="error" id="loginError" role="alert"></div>
+        <div class="network-message" id="networkMessage" role="status"></div>
+      </form>
+
+      <div class="how-it-works">
+        <strong>Como funciona</strong>
+        <ol><li>Confirmamos CPF e nascimento.</li><li>Localizamos seu atendimento ativo.</li><li>Abrimos somente os dados vinculados à sua sessão.</li></ol>
+      </div>
+    </section>
+
+    <section class="privacy-note">
+      <span aria-hidden="true">⌁</span>
+      <div><strong>Privacidade por padrão</strong><p>Dados clínicos não ficam salvos nos arquivos do site nem no cache do navegador. A consulta é feita diretamente no banco protegido do VitalCare.</p></div>
+    </section>
+    <div class="footer">VitalCare 2.0 · Informação que acompanha o cuidado. · <span id="loginClock">Horário de Brasília</span></div>
+  </main>
+
+  <script>
+    (async()=>{try{if('caches'in window){const keys=await caches.keys();await Promise.all(keys.filter(k=>k.startsWith('vitalcare-paciente-')&&k!=='vitalcare-paciente-v5.1.0').map(k=>caches.delete(k)));}if('serviceWorker'in navigator){const regs=await navigator.serviceWorker.getRegistrations();for(const reg of regs){const url=reg.active?.scriptURL||reg.waiting?.scriptURL||reg.installing?.scriptURL||'';if(url&&!url.includes('v=5.1.0'))await reg.unregister();}}}catch(_){}})();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <script src="config.js?v=5.1.0"></script>
+  <script src="login.js?v=5.1.0"></script>
+</body>
+</html>
