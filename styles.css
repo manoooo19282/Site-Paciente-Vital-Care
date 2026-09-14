@@ -64,7 +64,7 @@ body.high-contrast{--sky:#fff;--sky-2:#fff;--line:#65748e;--line-strong:#34455f;
 @media print{body{background:#fff;padding:0}.live-bar,.bottom-nav,.status-actions,.header-actions,.accessibility-card,.help-card,.privacy-card,.install-card,.notice-card,.mini-action,.section-action{display:none!important}.app-shell{width:100%;background:#fff}.mobile-header{border-radius:0;box-shadow:none;padding:18px;background:#08245d!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}main{margin:0;padding:16px}.content-layout{display:block}.content-side{display:none}.status-card,.section-block,.summary-card,.next-step-card{box-shadow:none;break-inside:avoid}.summary-grid{grid-template-columns:repeat(4,1fr)}body.privacy-mode .sensitive-text,body.privacy-mode .sensitive-surface{filter:none;opacity:1}.app-footer{padding:10px}}
 
 
-/* ===== VitalCare Minha Fila 5.1.3 — ajustes solicitados ===== */
+/* ===== VitalCare Minha Fila 5.1.4 — ajustes solicitados ===== */
 .app-shell{max-width:430px;margin:0 auto;}
 .content-layout{display:block;}
 .content-side{display:grid;gap:12px;position:static;top:auto;margin-top:12px;}
@@ -123,13 +123,13 @@ main{padding:0 10px 15px;margin-top:-38px;}
 @media (max-width:390px){.main-logo{width:172px}.summary-card{min-height:110px}.summary-card small{font-size:.57rem}.vitals-grid{grid-template-columns:1fr}.notice-card{grid-template-columns:34px 1fr}.notice-card button{grid-column:2;justify-self:start}.section-title-row{align-items:flex-start;flex-direction:column}.section-title-row .section-action{align-self:flex-start}.bottom-nav small{display:none}.bottom-nav{height:56px}.bottom-nav a span{font-size:1rem}.content-side{display:grid}}
 
 
-/* VitalCare 5.1.3 — iOS logo hardening: pure inline SVG, no image file/data URI dependency */
+/* VitalCare 5.1.4 — iOS logo hardening: pure inline SVG, no image file/data URI dependency */
 .main-logo-inline{display:block;width:205px!important;height:auto!important;max-width:56vw;aspect-ratio:610/135;overflow:visible;}
 .logo-wrap{min-height:56px;align-items:center;justify-content:flex-start;}
 @media(max-width:390px){.main-logo-inline{width:172px!important;max-width:55vw;}}
 
 .footer-logo-inline{display:block;width:150px;height:auto;aspect-ratio:610/135;margin:0 auto 6px;color:var(--blue-900);}
 
-/* VitalCare 5.1.3 — restauração da logo original */
+/* VitalCare 5.1.4 — restauração da logo original */
 .main-logo-image{display:block;width:205px;max-width:100%;height:auto;object-fit:contain}
 .footer-logo-image{display:block;width:155px;max-width:100%;height:auto;object-fit:contain}

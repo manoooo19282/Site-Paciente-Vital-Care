@@ -1,5 +1,5 @@
-const CACHE='vitalcare-paciente-v5.1.3-imagefix';
-const ASSETS=['./','./index.html','./login.html','./styles.css?v=5.1.3','./integration.css?v=5.1.3','./login.css?v=5.1.3','./config.js?v=5.1.3','./script.js?v=5.1.3','./login.js?v=5.1.3','./manifest.webmanifest','./assets/favicon.svg','./assets/logo-vitalcare-2.0.png?v=5.1.3'];
+const CACHE='vitalcare-paciente-v5.1.4-imagefix';
+const ASSETS=['./','./index.html','./login.html','./styles.css?v=5.1.4','./integration.css?v=5.1.4','./login.css?v=5.1.4','./config.js?v=5.1.4','./script.js?v=5.1.4','./login.js?v=5.1.4','./manifest.webmanifest','./assets/favicon.svg','./assets/logo-vitalcare-minhafila-5.1.4.png?v=5.1.4'];
 self.addEventListener('install',event=>{self.skipWaiting();event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS)));});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));});
 self.addEventListener('fetch',event=>{

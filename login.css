@@ -3,9 +3,12 @@
 @media(max-width:760px){body{padding:14px}.login-shell{grid-template-columns:1fr;max-width:500px}.login-hero{min-height:auto;padding:22px;border-radius:26px}.brand img{width:205px}.live-pill{margin-top:72px}.login-hero h1{font-size:2.35rem}.feature-row{margin-top:20px}.login-card{border-radius:24px;padding:20px}.privacy-note{grid-column:1}.footer{grid-column:1}}@media(max-width:390px){.feature-row{grid-template-columns:1fr}.feature-row>div{padding:9px}.live-pill{margin-top:54px}.login-hero h1{font-size:2rem}.card-head{align-items:flex-start;flex-direction:column}.secure-badge{align-self:flex-start}}
 
 
-/* VitalCare 5.1.3 — logo inline segura no iOS */
+/* VitalCare 5.1.4 — logo inline segura no iOS */
 .login-brand-inline{display:block;width:min(310px,82vw);height:auto;aspect-ratio:610/135;margin:0 auto;}
-.brand img{display:none!important;}
 
-/* VitalCare 5.1.3 — logo original */
+
+/* VitalCare 5.1.4 — logo original */
 .login-brand-image{display:block;width:220px;max-width:100%;height:auto;object-fit:contain}
+
+/* 5.1.4 — garante exibição da imagem original em Safari/iOS */
+.brand .login-brand-image{display:block!important;width:220px;max-width:82vw;height:auto;object-fit:contain}
