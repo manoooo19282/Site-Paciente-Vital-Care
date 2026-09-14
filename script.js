@@ -268,7 +268,7 @@
     state.channel=ch.subscribe(status=>{state.realtimeStatus=status;updateConnectionState();if(status==='SUBSCRIBED')announce('Atualizações em tempo real conectadas.');});
   }
 
-  function registerSW(){if('serviceWorker'in navigator&&location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js?v=5.1.0').catch(()=>{});}
+  function registerSW(){if('serviceWorker'in navigator&&location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js?v=5.1.1').catch(()=>{});}
 
   async function init(){
     restorePreferences();bindControls();registerSW();updateReasonCount();updateConnectionState();updateClock();setInterval(()=>{updateClock();updateFreshness();},1000);

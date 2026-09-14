@@ -64,7 +64,7 @@ body.high-contrast{--sky:#fff;--sky-2:#fff;--line:#65748e;--line-strong:#34455f;
 @media print{body{background:#fff;padding:0}.live-bar,.bottom-nav,.status-actions,.header-actions,.accessibility-card,.help-card,.privacy-card,.install-card,.notice-card,.mini-action,.section-action{display:none!important}.app-shell{width:100%;background:#fff}.mobile-header{border-radius:0;box-shadow:none;padding:18px;background:#08245d!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}main{margin:0;padding:16px}.content-layout{display:block}.content-side{display:none}.status-card,.section-block,.summary-card,.next-step-card{box-shadow:none;break-inside:avoid}.summary-grid{grid-template-columns:repeat(4,1fr)}body.privacy-mode .sensitive-text,body.privacy-mode .sensitive-surface{filter:none;opacity:1}.app-footer{padding:10px}}
 
 
-/* ===== VitalCare Minha Fila 5.1 — ajustes solicitados ===== */
+/* ===== VitalCare Minha Fila 5.1.1 — ajustes solicitados ===== */
 .app-shell{max-width:430px;margin:0 auto;}
 .content-layout{display:block;}
 .content-side{display:grid;gap:12px;position:static;top:auto;margin-top:12px;}
