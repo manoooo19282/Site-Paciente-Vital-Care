@@ -3,12 +3,19 @@
 @media(max-width:760px){body{padding:14px}.login-shell{grid-template-columns:1fr;max-width:500px}.login-hero{min-height:auto;padding:22px;border-radius:26px}.brand img{width:205px}.live-pill{margin-top:72px}.login-hero h1{font-size:2.35rem}.feature-row{margin-top:20px}.login-card{border-radius:24px;padding:20px}.privacy-note{grid-column:1}.footer{grid-column:1}}@media(max-width:390px){.feature-row{grid-template-columns:1fr}.feature-row>div{padding:9px}.live-pill{margin-top:54px}.login-hero h1{font-size:2rem}.card-head{align-items:flex-start;flex-direction:column}.secure-badge{align-self:flex-start}}
 
 
-/* VitalCare 5.1.4 — logo inline segura no iOS */
-.login-brand-inline{display:block;width:min(310px,82vw);height:auto;aspect-ratio:610/135;margin:0 auto;}
 
 
-/* VitalCare 5.1.4 — logo original */
-.login-brand-image{display:block;width:220px;max-width:100%;height:auto;object-fit:contain}
+/* VitalCare 5.2 — marca sem imagem e responsividade universal */
+.brand{width:max-content;max-width:100%}
+.brand .brand-lockup{display:inline-flex;align-items:center;gap:10px;color:#fff}
+.brand .brand-symbol{width:42px;height:42px;flex:0 0 42px;border-radius:13px;display:grid;place-items:center;font-size:1.22rem;font-weight:950;letter-spacing:-.08em;border:2px solid currentColor;position:relative}
+.brand .brand-symbol::after{content:"+";position:absolute;right:-5px;bottom:-5px;width:17px;height:17px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:950;background:#54e2d0;color:#063062;border:2px solid currentColor}
+.brand .brand-copy{display:grid;gap:3px}.brand .brand-name{font-size:1.65rem;font-weight:900;letter-spacing:-.055em;white-space:nowrap}.brand .brand-name b{font-size:.7rem;vertical-align:super;color:#62e0d2}.brand .brand-subtitle{font-size:.55rem;font-weight:950;letter-spacing:.18em;color:#62e0d2}
+@media(max-width:760px){.brand .brand-name{font-size:1.45rem}.brand .brand-symbol{width:38px;height:38px;flex-basis:38px}.login-shell{width:min(520px,100%)}}
+@media(max-width:390px){body{padding:10px}.login-hero{padding:18px}.login-card{padding:18px}.brand .brand-name{font-size:1.25rem}.brand .brand-subtitle{font-size:.48rem}.brand .brand-symbol{width:34px;height:34px;flex-basis:34px}.feature-row{grid-template-columns:1fr}}
 
-/* 5.1.4 — garante exibição da imagem original em Safari/iOS */
-.brand .login-brand-image{display:block!important;width:220px;max-width:82vw;height:auto;object-fit:contain}
+
+/* 5.2.1 — mantém a imagem oficial VitalCare Minha Fila */
+.brand{display:flex;align-items:center;justify-content:flex-start;min-height:64px}
+.login-brand-image{display:block;width:min(100%,390px);height:auto;max-height:92px;object-fit:contain;object-position:left center;background:linear-gradient(135deg,#06183f,#0a3b96);padding:10px 12px;border-radius:18px}
+@media (max-width:620px){.login-brand-image{width:min(100%,330px);max-height:78px;padding:9px 11px}}

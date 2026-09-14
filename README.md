@@ -1,4 +1,4 @@
-# VitalCare Minha Fila 5.1.4
+# VitalCare Minha Fila 5.2.1
 
 Portal do paciente integrado ao Supabase do VitalCare.
 
@@ -18,4 +18,4 @@ Nenhuma informação da versão 4.2 foi removida. O portal exibe cadastro, atend
 A aplicação usa a publishable key do Supabase e depende de RLS/RPCs para autorização. Não inclua `service_role` ou secret keys neste projeto.
 
 ## Executar localmente
-Execute `INICIAR_MINHA_FILA_5_1.bat` ou rode `py -m http.server 8012` e abra `http://localhost:8012/login.html`.
+Execute `INICIAR_MINHA_FILA_5_2.bat` ou rode `py -m http.server 8013` e abra `http://localhost:8013/login.html`.

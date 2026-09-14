@@ -6,5 +6,5 @@ window.VITALCARE_CONFIG = Object.freeze({
   realtimeDebounceMs: 350,
   loginPage: 'login.html',
   homePage: 'index.html',
-  appVersion: '5.1.4'
+  appVersion: '5.2.1-responsive'
 });

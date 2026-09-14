@@ -64,72 +64,123 @@ body.high-contrast{--sky:#fff;--sky-2:#fff;--line:#65748e;--line-strong:#34455f;
 @media print{body{background:#fff;padding:0}.live-bar,.bottom-nav,.status-actions,.header-actions,.accessibility-card,.help-card,.privacy-card,.install-card,.notice-card,.mini-action,.section-action{display:none!important}.app-shell{width:100%;background:#fff}.mobile-header{border-radius:0;box-shadow:none;padding:18px;background:#08245d!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}main{margin:0;padding:16px}.content-layout{display:block}.content-side{display:none}.status-card,.section-block,.summary-card,.next-step-card{box-shadow:none;break-inside:avoid}.summary-grid{grid-template-columns:repeat(4,1fr)}body.privacy-mode .sensitive-text,body.privacy-mode .sensitive-surface{filter:none;opacity:1}.app-footer{padding:10px}}
 
 
-/* ===== VitalCare Minha Fila 5.1.4 — ajustes solicitados ===== */
-.app-shell{max-width:430px;margin:0 auto;}
-.content-layout{display:block;}
-.content-side{display:grid;gap:12px;position:static;top:auto;margin-top:12px;}
-.summary-grid{grid-template-columns:1fr 1fr;gap:8px;}
-.summary-card{padding:13px;min-height:116px;}
-.summary-card strong{font-size:1.23rem;}
-main{padding:0 10px 15px;margin-top:-38px;}
-.mobile-header{padding:17px 14px 64px;border-radius:0 0 28px 28px;}
-.logo-wrap{padding:7px 10px;border-radius:15px;}
-.main-logo{width:205px;}
-.avatar-button,.header-icon-button{width:40px;height:40px;border-radius:13px;}
-.header-copy{margin-top:22px;}
-.header-copy h1{font-size:2rem;}
-.header-copy>p{font-size:.78rem;}
-.header-meta{font-size:.62rem;}
-.mini-action{font-size:.57rem;}
-.status-card{padding:17px;border-radius:23px;}
-.status-card h2{font-size:1.44rem;}
-.status-actions{grid-template-columns:1fr;}
-.btn-reassessment{grid-column:auto;}
-.next-step-card{grid-template-columns:42px 1fr;padding:14px;}
-.next-step-icon{width:42px;height:42px;}
-.section-block{padding:15px;border-radius:20px;}
-.section-title-row{gap:8px;}
-.clinical-metrics{grid-template-columns:1fr 1fr;}
-.detail-row{grid-template-columns:1fr;gap:3px;}
-.vitals-grid{grid-template-columns:1fr 1fr;}
-.content-side{grid-template-columns:1fr;}
+/* ===== VitalCare Minha Fila 5.2 — responsivo universal ===== */
+:root{--page-max:1180px}
+.app-shell{width:min(var(--page-max),100%);max-width:none;margin:0 auto;min-height:100vh;background:rgba(250,253,255,.74)}
 
-.summary-card[data-priority="verde"]{background:linear-gradient(145deg,#ffffff,#ebfff1);border-color:#8ad7a3;}
-.summary-card[data-priority="verde"] .summary-icon{background:#dff7e7;color:#138a49;}
-.summary-card[data-priority="verde"] strong{color:#11713d;}
-.summary-card[data-priority="verde"] .summary-label,.summary-card[data-priority="verde"] small{color:#3e7b57;}
+/* Marca 100% HTML/CSS: não depende de PNG, SVG ou base64. */
+.brand-lockup{display:inline-flex;align-items:center;gap:10px;min-width:0;line-height:1}
+.brand-symbol{width:42px;height:42px;flex:0 0 42px;border-radius:13px;display:grid;place-items:center;font-size:1.22rem;font-weight:950;letter-spacing:-.08em;border:2px solid currentColor;position:relative}
+.brand-symbol::after{content:"+";position:absolute;right:-5px;bottom:-5px;width:17px;height:17px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:950;background:#54e2d0;color:#063062;border:2px solid currentColor}
+.brand-copy{display:grid;gap:3px;min-width:0}
+.brand-name{font-size:1.7rem;font-weight:900;letter-spacing:-.055em;white-space:nowrap}
+.brand-name b{font-size:.72rem;vertical-align:super;color:#62e0d2;letter-spacing:-.02em}
+.brand-subtitle{font-size:.58rem;font-weight:950;letter-spacing:.19em;color:#62e0d2;white-space:nowrap}
+.brand-lockup-light{color:#fff}
+.brand-lockup-dark{color:var(--blue-900)}
+.brand-lockup-dark .brand-name b,.brand-lockup-dark .brand-subtitle{color:#119d9b}
+.brand-lockup-footer{color:var(--blue-900);transform:scale(.78);transform-origin:center}
+.brand-lockup-footer .brand-name b,.brand-lockup-footer .brand-subtitle{color:#119d9b}
+.logo-wrap{display:flex;align-items:center;min-height:58px;padding:7px 10px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);border-radius:17px;width:max-content;max-width:calc(100% - 104px)}
+.logo-wrap .brand-name{font-size:1.62rem}
 
-.summary-card[data-priority="amarelo"]{background:linear-gradient(145deg,#fffdf5,#fff5c8);border-color:#f1d14d;}
-.summary-card[data-priority="amarelo"] .summary-icon{background:#fff1b3;color:#9e7600;}
-.summary-card[data-priority="amarelo"] strong{color:#8a6700;}
-.summary-card[data-priority="amarelo"] .summary-label,.summary-card[data-priority="amarelo"] small{color:#806513;}
+/* Prioridade: a própria classificação colore o cartão, sem expor pontuação. */
+.summary-card[data-priority="verde"]{background:linear-gradient(145deg,#fff,#e9faef);border-color:#84d59e}
+.summary-card[data-priority="verde"] .summary-icon{background:#d9f4e2;color:#137b43}.summary-card[data-priority="verde"] strong{color:#116b3a}.summary-card[data-priority="verde"] .summary-label,.summary-card[data-priority="verde"] small{color:#3d7553}
+.summary-card[data-priority="amarelo"]{background:linear-gradient(145deg,#fffef8,#fff3bf);border-color:#e8c938}.summary-card[data-priority="amarelo"] .summary-icon{background:#ffefad;color:#8d6b00}.summary-card[data-priority="amarelo"] strong{color:#755900}.summary-card[data-priority="amarelo"] .summary-label,.summary-card[data-priority="amarelo"] small{color:#78621b}
+.summary-card[data-priority="laranja"]{background:linear-gradient(145deg,#fffaf5,#ffdcbf);border-color:#ee9137}.summary-card[data-priority="laranja"] .summary-icon{background:#ffd2a9;color:#a95200}.summary-card[data-priority="laranja"] strong{color:#974a00}.summary-card[data-priority="laranja"] .summary-label,.summary-card[data-priority="laranja"] small{color:#85531f}
+.summary-card[data-priority="vermelho"]{background:linear-gradient(145deg,#fff8f8,#ffd5d5);border-color:#ea7777}.summary-card[data-priority="vermelho"] .summary-icon{background:#ffc6c6;color:#ad1f1f}.summary-card[data-priority="vermelho"] strong{color:#961919}.summary-card[data-priority="vermelho"] .summary-label,.summary-card[data-priority="vermelho"] small{color:#843d3d}
+.summary-card[data-priority="azul"]{background:linear-gradient(145deg,#fbfdff,#d7eaff);border-color:#7fb5ff}.summary-card[data-priority="azul"] .summary-icon{background:#d5e7ff;color:#195bb8}.summary-card[data-priority="azul"] strong{color:#144c99}.summary-card[data-priority="azul"] .summary-label,.summary-card[data-priority="azul"] small{color:#466b9f}
 
-.summary-card[data-priority="laranja"]{background:linear-gradient(145deg,#fffaf6,#ffe0c7);border-color:#f39a45;}
-.summary-card[data-priority="laranja"] .summary-icon{background:#ffd4ae;color:#b55c00;}
-.summary-card[data-priority="laranja"] strong{color:#a55300;}
-.summary-card[data-priority="laranja"] .summary-label,.summary-card[data-priority="laranja"] small{color:#8c5822;}
+/* Desktop */
+@media (min-width:901px){
+  body{padding-bottom:24px}
+  .mobile-header{padding:24px 30px 80px}
+  .header-top{align-items:center}
+  .header-copy{max-width:830px;margin-top:28px}
+  .header-copy h1{font-size:clamp(2.3rem,4.2vw,4.35rem);max-width:900px}
+  main{padding:0 26px 24px;margin-top:-48px}
+  .summary-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+  .content-layout{grid-template-columns:minmax(0,1fr) 310px;gap:16px}
+  .content-side{display:grid;grid-template-columns:1fr;position:sticky;top:52px}
+  .bottom-nav{display:none}
+  .toast{bottom:28px}
+}
 
-.summary-card[data-priority="vermelho"]{background:linear-gradient(145deg,#fff8f8,#ffd8d8);border-color:#ef7f7f;}
-.summary-card[data-priority="vermelho"] .summary-icon{background:#ffc7c7;color:#bb2020;}
-.summary-card[data-priority="vermelho"] strong{color:#a91818;}
-.summary-card[data-priority="vermelho"] .summary-label,.summary-card[data-priority="vermelho"] small{color:#8b3d3d;}
+/* Tablet */
+@media (min-width:621px) and (max-width:900px){
+  body{padding-bottom:24px}
+  .app-shell{width:min(760px,100%)}
+  .mobile-header{padding:22px 22px 72px}
+  main{padding:0 18px 20px;margin-top:-44px}
+  .summary-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .content-layout{grid-template-columns:1fr}
+  .content-side{position:static;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .bottom-nav{display:none}
+  .header-copy h1{font-size:clamp(2.2rem,7vw,3.35rem)}
+}
 
-.summary-card[data-priority="azul"]{background:linear-gradient(145deg,#fbfdff,#d8ebff);border-color:#83b7ff;}
-.summary-card[data-priority="azul"] .summary-icon{background:#d7e8ff;color:#1a5fc6;}
-.summary-card[data-priority="azul"] strong{color:#144ea5;}
-.summary-card[data-priority="azul"] .summary-label,.summary-card[data-priority="azul"] small{color:#466eac;}
+/* Celular */
+@media (max-width:620px){
+  body{padding-bottom:90px}
+  .app-shell{width:100%;max-width:none}
+  .live-bar-inner{padding:6px 12px;font-size:.58rem}
+  .live-bar-inner>span:nth-of-type(3){display:none}
+  .mobile-header{padding:16px 14px 62px;border-radius:0 0 28px 28px}
+  .header-top{gap:8px}
+  .logo-wrap{padding:6px 8px;min-height:50px;max-width:calc(100% - 94px)}
+  .logo-wrap .brand-symbol{width:34px;height:34px;flex-basis:34px;border-radius:11px;font-size:1rem}
+  .logo-wrap .brand-symbol::after{width:15px;height:15px;font-size:10px}
+  .logo-wrap .brand-name{font-size:clamp(1.1rem,5.8vw,1.48rem)}
+  .logo-wrap .brand-subtitle{font-size:.48rem;letter-spacing:.14em}
+  .avatar-button,.header-icon-button{width:40px;height:40px;border-radius:13px}
+  .header-copy{margin-top:22px}
+  .header-copy h1{font-size:clamp(1.85rem,9vw,2.55rem);overflow-wrap:anywhere}
+  .header-copy>p{font-size:.78rem}
+  .header-meta{font-size:.62rem}
+  .mini-action{font-size:.57rem}
+  main{padding:0 10px 15px;margin-top:-38px}
+  .status-card{padding:17px;border-radius:23px}
+  .status-card h2{font-size:1.44rem}
+  .status-actions{grid-template-columns:1fr}
+  .btn-reassessment{grid-column:auto}
+  .summary-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .summary-card{padding:13px;min-height:116px}
+  .summary-card strong{font-size:1.23rem}
+  .next-step-card{grid-template-columns:42px 1fr;padding:14px}
+  .next-step-icon{width:42px;height:42px}
+  .content-layout{display:block}
+  .content-side{display:grid;grid-template-columns:1fr;position:static;margin-top:12px}
+  .section-block{padding:15px;border-radius:20px}
+  .section-title-row{gap:8px}
+  .clinical-metrics{grid-template-columns:1fr 1fr}
+  .detail-row{grid-template-columns:1fr;gap:3px}
+  .vitals-grid{grid-template-columns:1fr 1fr}
+  .bottom-nav{display:grid;height:64px}
+  .bottom-nav small{font-size:.52rem}
+  .update-meta-row{display:block}.update-meta-row small{display:block;margin-top:3px}
+}
 
-@media (min-width:901px){body{padding-bottom:90px}.bottom-nav{height:64px}}
-@media (max-width:390px){.main-logo{width:172px}.summary-card{min-height:110px}.summary-card small{font-size:.57rem}.vitals-grid{grid-template-columns:1fr}.notice-card{grid-template-columns:34px 1fr}.notice-card button{grid-column:2;justify-self:start}.section-title-row{align-items:flex-start;flex-direction:column}.section-title-row .section-action{align-self:flex-start}.bottom-nav small{display:none}.bottom-nav{height:56px}.bottom-nav a span{font-size:1rem}.content-side{display:grid}}
+@media (max-width:390px){
+  .summary-grid{grid-template-columns:1fr}
+  .summary-card{min-height:104px}
+  .vitals-grid{grid-template-columns:1fr}
+  .clinical-metrics{grid-template-columns:1fr}
+  .notice-card{grid-template-columns:34px 1fr}.notice-card button{grid-column:2;justify-self:start}
+  .section-title-row{align-items:flex-start;flex-direction:column}.section-title-row .section-action{align-self:flex-start}
+  .bottom-nav small{display:none}.bottom-nav{height:56px}.bottom-nav a span{font-size:1rem}
+}
 
 
-/* VitalCare 5.1.4 — iOS logo hardening: pure inline SVG, no image file/data URI dependency */
-.main-logo-inline{display:block;width:205px!important;height:auto!important;max-width:56vw;aspect-ratio:610/135;overflow:visible;}
-.logo-wrap{min-height:56px;align-items:center;justify-content:flex-start;}
-@media(max-width:390px){.main-logo-inline{width:172px!important;max-width:55vw;}}
-
-.footer-logo-inline{display:block;width:150px;height:auto;aspect-ratio:610/135;margin:0 auto 6px;color:var(--blue-900);}
-
-/* VitalCare 5.1.4 — restauração da logo original */
-.main-logo-image{display:block;width:205px;max-width:100%;height:auto;object-fit:contain}
-.footer-logo-image{display:block;width:155px;max-width:100%;height:auto;object-fit:contain}
+/* ===== 5.2.1 — LOGO ORIGINAL EM IMAGEM, RESPONSIVA E COMPATÍVEL COM iOS ===== */
+.logo-wrap{display:flex;align-items:center;justify-content:flex-start;min-height:58px;padding:8px 11px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);border-radius:17px;width:min(430px,calc(100% - 104px));max-width:100%;overflow:hidden}
+.main-logo{display:block;width:min(100%,360px);height:auto;max-height:80px;object-fit:contain;object-position:left center;background:transparent;border:0;margin:0}
+.footer-logo{display:block;width:min(250px,78vw);height:auto;margin:0 auto 10px;object-fit:contain;background:linear-gradient(135deg,var(--blue-950),var(--blue-800));padding:10px 12px;border-radius:16px}
+@media (max-width:620px){
+  .logo-wrap{width:min(300px,calc(100% - 94px));min-height:50px;padding:7px 9px}
+  .main-logo{width:100%;max-height:62px}
+}
+@media (max-width:390px){
+  .logo-wrap{width:min(250px,calc(100% - 92px))}
+  .main-logo{max-height:54px}
+}

@@ -1,4 +1,4 @@
-# VitalCare Minha Fila 5.1.4 — correção de imagem no celular
+# VitalCare Minha Fila 5.2.0 — correção de imagem no celular
 
 - A logo principal agora é incorporada diretamente nas páginas (data URI), então não depende do caminho `assets/` para aparecer no celular.
 - A imagem física continua no pacote como cópia de segurança.

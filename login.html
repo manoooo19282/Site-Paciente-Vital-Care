@@ -8,24 +8,14 @@
   <meta name="description" content="Acesso seguro ao VitalCare Minha Fila." />
   <title>VitalCare Minha Fila — Acesso</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-  <link rel="preload" as="image" href="assets/logo-vitalcare-minhafila-5.1.4.png?v=5.1.4" />
   <link rel="manifest" href="manifest.webmanifest" />
-  <link rel="stylesheet" href="login.css?v=5.1.4" />
-
-  <script>
-  (function(){
-    try{
-      if('caches' in window){caches.keys().then(function(keys){return Promise.all(keys.filter(function(k){return k.indexOf('vitalcare-paciente-')===0 && k!=='vitalcare-paciente-v5.1.4-imagefix';}).map(function(k){return caches.delete(k);}));});}
-      if('serviceWorker' in navigator){navigator.serviceWorker.getRegistrations().then(function(regs){regs.forEach(function(reg){var u=(reg.active&&reg.active.scriptURL)||(reg.waiting&&reg.waiting.scriptURL)||(reg.installing&&reg.installing.scriptURL)||'';if(u && u.indexOf('v=5.1.4')===-1){reg.unregister();}});});}
-    }catch(e){}
-  })();
-  </script>
+  <link rel="stylesheet" href="login.css?v=5.2.1" />
 </head>
 <body>
   <div class="ambient a1"></div><div class="ambient a2"></div>
   <main class="login-shell">
     <section class="login-hero" aria-label="VitalCare Minha Fila">
-      <div class="brand"><img class="login-brand-image" src="assets/logo-vitalcare-minhafila-5.1.4.png?v=5.1.4" onerror="this.onerror=null;this.src='assets/logo-vitalcare-2.0.png?v=5.1.4b'" alt="VitalCare 2.0 Minha Fila" loading="eager" decoding="sync" /></div>
+      <div class="brand"><img class="login-brand-image" src="./vitalcare-minha-fila-logo-521.png" alt="VitalCare 2.0 Minha Fila" width="610" height="135" decoding="async" fetchpriority="high" onerror="this.onerror=null;this.src='./assets/vitalcare-minha-fila-logo-521.png';" /></div>
       <span class="live-pill"><i></i> Portal do paciente</span>
       <h1>Acompanhe seu atendimento com clareza.</h1>
       <p>Fila, jornada, sinais vitais e atualizações da equipe reunidos em um único lugar.</p>
@@ -71,10 +61,10 @@
   </main>
 
   <script>
-    (async()=>{try{if('caches'in window){const keys=await caches.keys();await Promise.all(keys.filter(k=>k.startsWith('vitalcare-paciente-')&&k!=='vitalcare-paciente-v5.1.4').map(k=>caches.delete(k)));}if('serviceWorker'in navigator){const regs=await navigator.serviceWorker.getRegistrations();for(const reg of regs){const url=reg.active?.scriptURL||reg.waiting?.scriptURL||reg.installing?.scriptURL||'';if(url&&!url.includes('v=5.1.4'))await reg.unregister();}}}catch(_){}})();
+    (async()=>{try{if('caches'in window){const keys=await caches.keys();await Promise.all(keys.filter(k=>k.startsWith('vitalcare-paciente-')&&k!=='vitalcare-paciente-v5.2.1-responsive').map(k=>caches.delete(k)));}if('serviceWorker'in navigator){const regs=await navigator.serviceWorker.getRegistrations();for(const reg of regs){const url=reg.active?.scriptURL||reg.waiting?.scriptURL||reg.installing?.scriptURL||'';if(url&&!url.includes('v=5.2.1'))await reg.unregister();}}}catch(_){}})();
   </script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-  <script src="config.js?v=5.1.4"></script>
-  <script src="login.js?v=5.1.4"></script>
+  <script src="config.js?v=5.2.1"></script>
+  <script src="login.js?v=5.2.1"></script>
 </body>
 </html>
