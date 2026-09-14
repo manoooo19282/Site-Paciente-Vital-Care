@@ -1,4 +1,4 @@
-# VitalCare Minha Fila 5.1.1 — alterações
+# VitalCare Minha Fila 5.1.3 — alterações
 
 ## Interface e experiência
 - Nova organização responsiva para celular e desktop sem retirar nenhum dado já exibido na 4.2.
